@@ -4,13 +4,13 @@ package org.lognet.springboot.grpc.demo;
 import io.grpc.examples.CalculatorGrpc;
 import io.grpc.examples.CalculatorOuterClass;
 import org.lognet.springboot.grpc.GRpcService;
+import org.lognet.springboot.grpc.demo.translator.TranslatorConfiguration;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
-import io.grpc.examples.GreeterGrpc;
-import io.grpc.examples.GreeterOuterClass;
 import io.grpc.stub.StreamObserver;
+import org.springframework.context.annotation.Import;
 
 /**
  * Created by alexf on 28-Jan-16.
@@ -18,6 +18,7 @@ import io.grpc.stub.StreamObserver;
 
 
 @SpringBootApplication
+@Import(TranslatorConfiguration.class)
 public class DemoApp {
 
     @Bean
