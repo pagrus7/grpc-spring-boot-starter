@@ -8,6 +8,7 @@ dependencies {
 
 
     compile project(':grpc-spring-boot-starter')
+    compile 'org.springframework.boot:spring-boot-starter-security'
 
     testCompile 'org.springframework.boot:spring-boot-starter-aop'
     testCompile('org.springframework.boot:spring-boot-starter-test')

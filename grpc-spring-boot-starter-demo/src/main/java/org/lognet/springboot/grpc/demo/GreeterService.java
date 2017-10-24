@@ -10,9 +10,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import io.grpc.examples.GreeterGrpc;
 import io.grpc.examples.GreeterOuterClass;
 import io.grpc.stub.StreamObserver;
+import org.springframework.security.access.annotation.Secured;
+
 @Slf4j
 @GRpcService(interceptors = { LogInterceptor.class })
 public class GreeterService extends GreeterGrpc.GreeterImplBase {
+    @Secured({ "ROLE_ADMIN" })
     @Override
     public void sayHello(GreeterOuterClass.HelloRequest request, StreamObserver<GreeterOuterClass.HelloReply> responseObserver) {
         String message = "Hello " + request.getName();
